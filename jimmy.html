@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Te amo</title>
+    <style>
+        body {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
+            height: 100vh;
+            margin: 0;
+            font-family: Arial, sans-serif;
+            text-align: center;
+        }
+        #yo-no {
+            position: absolute;
+        }
+    </style>
+</head>
+<body>
+    <h1>Te amo</h1>
+    <button id="yo-tambien">Yo también</button>
+    <button id="yo-no">Yo no</button>
+
+    <script>
+        const yoNo = document.getElementById('yo-no');
+        const yoTambien = document.getElementById('yo-tambien');
+
+        yoNo.addEventListener('click', () => {
+            // Generar posición aleatoria para el botón "Yo no"
+            const randomX = Math.random() * (window.innerWidth - yoNo.clientWidth);
+            const randomY = Math.random() * (window.innerHeight - yoNo.clientHeight);
+            yoNo.style.left = `${randomX}px`;
+            yoNo.style.top = `${randomY}px`;
+        });
+
+        yoTambien.addEventListener('click', () => {
+            alert('¡Correcto!');
+        });
+    </script>
+</body>
+</html>
